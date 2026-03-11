@@ -8,9 +8,23 @@
     <link rel="stylesheet" href="css/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <title>Edusphere Academy</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
 </head>
 
+<div id="loader" class="fixed inset-0 bg-white flex justify-center items-center z-50">
+    <h1 class="text-3xl font-bold text-blue-600 animate-pulse">
+        Loading...
+    </h1>
+</div>
+
+<div id="progressBar" class="fixed top-0 left-0 h-1 bg-blue-600 z-50"></div>
+
+
 <body class="scroll-smooth selection:bg-blue-900 selection:text-white">
+    <div class="cursor" id="cursor"></div>
     <header
         class=" w-full fixed  z-20 bg-white/70 backdrop-blur-md py-4  px-4 shadow-2xl flex justify-around items-center gap-8 lg:gap-20 ">
         <div class="flex gap-2 text-center">
@@ -25,10 +39,10 @@
             <li class="hover:text-blue-600"><a href="#footer">Contact</a></li>
         </ul>
         <button id="menuBtn" class="text-2xl md:hidden">
-            <i id="menuId" class="fa-solid fa-bars"></i>
+            <i id="menuId" class="fa-solid fa-bars text-blue-700"></i>
 
         </button>
-        <ul id="menuMobile" class="hidden md:hidden  flex-col gap-10 font-bold  text-xl
+        <ul id="menuMobile" class="hidden md:hidden  flex-col gap-10 font-bold  text-lg
         absolute top-20 left-0 w-full bg-white p-6 shadow-md space-y-6 rounded-2xl transition-all duration-500">
             <li class="hover:text-blue-600"><a href="#home">Home</a></li>
             <li class="hover:text-blue-600"><a href="#sec1">courses</a></li>
@@ -118,7 +132,8 @@
 
         <div class="w-full container mx-auto  px-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
             <div class="max-w-sm mx-auto ring-1 ring-gray-300 rounded-xl p-8  space-y-6 
-                       hover:shadow-2xl hover:ring-blue-700 hover:-translate-y-4  transition-all duration-500 group">
+                       hover:shadow-2xl hover:ring-blue-700 hover:-translate-y-4  transition-all duration-500 group"
+                data-aos="fade-up">
                 <div
                     class="size-16 bg-blue-100 flex justify-center items-center rounded-lg transition duration-500 group-hover:bg-blue-700">
                     <i class=" fa-solid fa-code text-blue-700 text-4xl  group-hover:text-white"></i>
@@ -136,7 +151,8 @@
             </div><!-- card1 -->
 
             <div class="max-w-sm mx-auto ring-1 ring-gray-300 rounded-xl p-8 space-y-6
-                       hover:shadow-2xl hover:ring-purple-700 hover:-translate-y-4  transition-all duration-500 group">
+                       hover:shadow-2xl hover:ring-purple-700 hover:-translate-y-4  transition-all duration-500 group"
+                data-aos="fade-up">
                 <div
                     class="size-16 bg-purple-100 flex justify-center items-center rounded-lg transition duration-500 group-hover:bg-purple-700">
                     <i class=" fa-solid fa-pen-nib text-purple-700 text-4xl  group-hover:text-white"></i>
@@ -154,7 +170,8 @@
             </div><!-- card2 -->
 
             <div class="max-w-sm mx-auto ring-1 ring-gray-300 rounded-xl p-8 space-y-6
-                       hover:shadow-2xl hover:ring-green-700 hover:-translate-y-4  transition-all duration-500 group ">
+                       hover:shadow-2xl hover:ring-green-700 hover:-translate-y-4  transition-all duration-500 group "
+                data-aos="fade-up">
                 <div
                     class="size-16 bg-green-100 flex justify-center items-center rounded-lg transition duration-500 group-hover:bg-green-700">
                     <i class=" fa-solid fa-bullhorn text-green-700 text-4xl  group-hover:text-white"></i>
@@ -220,7 +237,7 @@
         </div>
         <div class="container mx-auto  w-full grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-8  ">
             <div class=" w-full h-full  rounded-2xl shadow-xl hover:shadow-2xl flex flex-col justify-between items-center gap-8
-                    text-center relative group overflow-hidden pb-4 transition duration-500 ">
+                    text-center relative group overflow-hidden pb-4 transition duration-500 " data-aos="fade-up">
                 <div class="w-full h-60 bg-gradient-to-tl to-blue-500 from-purple-600 rounded-t-2xl
                  flex justify-center items-center">
                     <i class="fa-solid fa-circle-user text-7xl text-white"></i>
@@ -245,7 +262,7 @@
             </div><!-- card1 -->
 
             <div class=" w-full h-full rounded-2xl shadow-xl hover:shadow-2xl flex flex-col justify-between items-center gap-8
-                    text-center relative group overflow-hidden pb-4 transition duration-500">
+                    text-center relative group overflow-hidden pb-4 transition duration-500" data-aos="fade-up">
                 <div class="w-full h-60 bg-gradient-to-tl to-purple-400 from-pink-400 rounded-t-2xl
                  flex justify-center items-center">
                     <i class="fa-solid fa-circle-user text-7xl text-white"></i>
@@ -270,7 +287,7 @@
             </div><!-- card2 -->
 
             <div class="w-full  rounded-2xl shadow-xl hover:shadow-2xl flex flex-col justify-between items-center gap-8
-                    text-center relative group overflow-hidden pb-4 transition duration-500">
+                    text-center relative group overflow-hidden pb-4 transition duration-500" data-aos="fade-up">
                 <div class="w-full h-60 bg-gradient-to-tl to-green-300 from-blue-300 rounded-t-2xl
                  flex justify-center items-center">
                     <i class="fa-solid fa-circle-user text-7xl text-white"></i>
@@ -295,7 +312,7 @@
             </div><!-- card3 -->
 
             <div class="w-full rounded-2xl shadow-xl hover:shadow-2xl flex flex-col justify-between items-center gap-8
-                    text-center relative group overflow-hidden pb-4 transition duration-500">
+                    text-center relative group overflow-hidden pb-4 transition duration-500" data-aos="fade-up">
                 <div class="w-full h-60 bg-gradient-to-tl to-yellow-300 from-orange-500 rounded-t-2xl
                  flex justify-center items-center">
                     <i class="fa-solid fa-circle-user text-7xl text-white"></i>
@@ -407,25 +424,44 @@
 
 
     <script>
+        
+window.onload = function () {
+    document.getElementById("loader").style.display = "none"
+}
 
-        let btn = document.getElementById("menuBtn")
-        let menu = document.getElementById("menuMobile")
-        let icon = document.getElementById("menuId")
+let btn = document.getElementById("menuBtn")
+let menu = document.getElementById("menuMobile")
+let icon = document.getElementById("menuId")
 
 
-        btn.onclick = function () {
-            menu.classList.toggle("hidden");
-            if (menu.classList.contains("hidden")) {
-                icon.classList.remove("fa-xmark")
-                icon.classList.add("fa-bars")
+btn.onclick = function () {
+    menu.classList.toggle("hidden");
+    if (menu.classList.contains("hidden")) {
+        icon.classList.remove("fa-xmark")
+        icon.classList.add("fa-bars")
 
-            }
-            else {
-                icon.classList.remove("fa-bars")
-                icon.classList.add("fa-xmark")
+    }
+    else {
+        icon.classList.remove("fa-bars")
+        icon.classList.add("fa-xmark")
 
-            }
-        }
+    }
+}
+
+window.addEventListener("scroll", function () {
+
+    let scroll = document.documentElement.scrollTop
+    let height = document.documentElement.scrollHeight - document.documentElement.clientHeight
+
+    let progress = (scroll / height) * 100
+
+    document.getElementById("progressBar").style.width = progress + "%"
+
+})
+
+
+AOS.init();
+
     </script>
 </body>
 
